@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LAB 3</title>
+  </head>
+  
+  <body>
+    <script>
+      fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+        .then(response => response.json())
+        .then(json => console.log(json));   
+    </script>
+    
+
+      <h1> "Central NGC 1316: After Galaxies Collide" </h1>
+
+      <img src = "https://apod.nasa.gov/apod/image/2101/NGC1316Center_HubbleNobre_2585.jpg" width = 200;>
+
+      <p> "How did this strange-looking galaxy form?  Astronomers turn detectives when trying 
+          to figure out the cause of unusual jumbles of stars, gas, and dust like NGC 1316. 
+          Inspection indicates that NGC 1316 is an enormous elliptical galaxy that somehow 
+          includes dark dust lanes usually found in a spiral galaxy.  Detailed images taken by 
+          the Hubble Space Telescope shows details, however, that help in reconstructing the 
+          history of this gigantic tangle.  Deep and wide images show huge collisional shells, 
+          while deep central images reveal fewer globular clusters of stars toward NGC 1316's 
+          interior.  Such effects are expected in galaxies that have undergone collisions or 
+          merging with other galaxies in the past few billion years.  The dark knots and lanes 
+          of dust, prominent in the featured image, indicate that one or more of the devoured 
+          galaxies were spiral galaxies.  NGC 1316 spans about 50,000 light years and lies about 
+          60 million light years away toward the constellation of the Furnace (Fornax)."
+      </p> 
+                                                                                              
+    
+    
+    
+  </body>
+  
+</html>>

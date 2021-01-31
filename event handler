@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Event Handler Basics</title>
+
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+
+    <style>
+      .bigger {width:400px; height:600px;}
+      blockquote {font-family: "Architects Daughter", Arial; font-size: 2em; }
+    </style>
+
+  </head>
+  <body>
+
+    <div id="images">
+      <img src="https://picsum.photos/seed/a/200/300" alt="random image">
+      <img src="https://picsum.photos/seed/b/200/300" alt="random image">
+      <img src="https://picsum.photos/seed/c/200/300" alt="random image">
+    </div>
+
+    <blockquote cite="https://quoteinvestigator.com/2014/05/27/rising/">
+      "The greatest glory in living lies not in never falling, but in rising every time we fall." -Nelson Mandela (and others)
+    </blockquote>
+
+    <script>
+
+    image.addEventListener("mouseover", add)
+    
+    let del() = () => {
+    image.removeAttribute("class", "bigger");
+    }
+    
+    image.addEventListener("mouseout", del)
+    
+    document.querySelectorAll("img").forEach(item => {
+      item.addEventListener("mouseover", event => {
+      item.setAttribute("class", "bigger")
+      })
+    })
+    
+    let add1 = () => {
+      window.open(https://quoteinvestigator.com/2014/05/27/rising/");
+    }
+    document.querySelector("blockquote").addEventListener("click", add1)
+    
+    
+    </script>
+
+
+  </body>
+</html>

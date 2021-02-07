@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+  </head>
+  <body>
+    <h1>Form Basics</h1>
+
+    <p id = "uptonSinclairQuote"> 
+      It is difficult to get a man to understand something, when his salary depends upon his not understanding it! -- Upton Sinclair 
+    
+    </p>
+           
+    <form id = "form1">
+      <input type = "text" id = "text1">
+      <br>
+      <br>
+      
+      <input type = "radio" id = "red" name = "radio1" value = "red">
+      <label for = "red">Red</label>
+      <input type = "radio" id = "green" name = "radio1" value = "green">
+      <label for = "green">Green</label>
+      <input type = "radio" id = "blue" name = "radio1" value = "blue">
+      <label for = "blue">Blue</label>
+      
+      <br>
+      <br>
+      
+      <label>Select A Day:
+        <select name = "select1" id = "select1">
+          <option value = "" >Select One...</option>
+          <option value = "Mon">Mon</option>
+          <option value = "Wed">Wed</option>
+          <option value = "Fri">Fri</option>
+        </select>
+        <p id="log"></p>
+       </label> 
+      <div class = "results"></div>
+        
+      
+      
+      <br>
+      <br>   
+      
+      <label for = "feedback">Please Provide Any Additional Feedback <br> </label>
+      <textarea id = "textarea1" name = "textarea1" rows = "4" cols = "50">
+     
+      </textarea>
+      
+    </form>
+
+    <script>
+     //1.
+      
+      document.querySelector("#text1").value = "Roberto T.";
+     //2.
+      
+      document.querySelector("#green").checked = true;
+     //3.
+    
+      document.querySelector("#textarea1").value = document.querySelector("#uptonSinclairQuote").innerText;
+     //4.
+      
+      document.querySelector("#log").innerText = document.querySelector("#results").innerText;
+  
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+      <!-- Include Dexie -->
+      <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+
+      <script>
+          //
+          // Define your database
+          //
+        
+          let url = "https://data.cityofchicago.org/resource/dw27-rash.json";
+        
+          fetch(url)
+            .then(response => response.json())
+            .then(data => console.log(data));
+        
+          var db = new Dexie("school_database");
+          db.version(1).stores({
+              schools: 'long_name,student_attainment_rating,student_attendance_year_1'
+          });
+
+          //
+          // Put some data into it
+          //
+          db.schools.put({name: "Nicolas", shoeSize: 8}).then (function(){
+              //
+              // Then when data is stored, read from it
+              //
+              return db.schools.get('Nicolas');
+          }).then(function (schools) {
+              //
+              // Display the result
+              //
+              alert ("Nicolas has shoe size " + schools.shoeSize);
+          }).catch(function(error) {
+             //
+             // Finally don't forget to catch any error
+             // that could have happened anywhere in the
+             // code blocks above.
+             //
+             alert ("Ooops: " + error);
+          });
+      </script>
+  </head>
+</html>

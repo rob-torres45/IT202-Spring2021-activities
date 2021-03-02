@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+  <meta charset="utf-8">
+  <title>MDN Canvas Tutorial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Stick&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    canvas{
+        background-color: #F7F6F5;
+        border: 3px solid black;
+    }
+</style>
+
+<body>
+    <canvas id = "canvas" height = "500" width = "500"></canvas>
+
+  <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+
+      ctx.fillStyle = "#4F7F8F";
+      ctx.fillRect(300, 100, 150, 100);
+      ctx.strokeRect(301, 101, 151, 101);
+
+      ctx.arc(75, 75, 50, 0, Math.PI * 2, true);
+
+      function drawCircle(){
+          var canvas = document.getElementById("canvas");
+          if(canvas.getContext)
+          {
+              var ctx = canvas.getContext("2d");
+              var X = canvas.width / 2;
+              var Y = canvas.height / 2;
+              var R = 45;
+              ctx.beginPath();
+              ctx.arc(X, Y, R, 0, 2*Math.PI, false);
+              ctx.fillStyle = "#FF1D58";
+              ctx.fill();
+          }
+      }
+
+      function multiImage(){
+          var ctx = document.getElementById("canvas").getContext("2d");
+          for(var i = 0; i < 6; i++)
+          {
+              for(var j = 0; j < 6; j++)
+              {
+                  ctx.strokeStyle = "rgb(0," + Math.floor(255 - 111.5 * i) + ", " + Math.floor(255 - 111.5 * j) + ")";
+                  ctx.beginPath();
+                  ctx.arc(12.5 + j * 25, 12.5 + i * 25, 10, 0, Math.PI * 2, true);
+                  ctx.stroke();
+              }
+          }
+      }
+
+      function drawText(){
+          var ctx = document.getElementById("canvas").getContext("2d");
+          ctx.font = '100px Stick';
+          ctx.fillStyle = "#0049B7";
+          ctx.fillText("Roberto", 50, 400);
+      }
+
+      drawCircle();
+      multiImage();
+      drawText();
+  </script>
+</body>
+
+</html>

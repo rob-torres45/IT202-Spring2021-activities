@@ -66,15 +66,27 @@
       });
 
       // once you get that working, update the code above to create 25 additional gameObjects with random x, y and color values; and push them to the array before the drawing and comparison
-
-      for(var i = 0; i < 5; i++){
-          for(var j = 0; j < 6; j++){
-              ctx.strokeStyle = "rgb(" + 52 + ", " +  Math.floor(255 - 42.5 * i) + ", " + Math.floor(255- 42.4 * j) + ")";
-              ctx.beginPath();
-              ctx.arc(12.5 + j * 25, 12.5 + i * 25, 10, 0, Math.PI * 2, true);
-              ctx.stroke();
-          }
+      function randomColor(){
+        var character = "0123456789ABCDEF";
+        var color = "#";
+        for(var i = 0; i < 6; i++){
+          color += character[Math.floor(Math.random()*16)];
+        }
+        return color 
       }
+
+      for(var i = 0; i < 25; i++)
+            {
+                var x = Math.random() * 500;
+                var y = Math.random() * 500;
+                ctx.beginPath();
+                ctx.arc(x, y, 30, 0, Math.PI * 2, false);
+                ctx.lineWidth = 5;
+                ctx.strokeStyle = "white";
+                ctx.fillStyle = randomColor();
+                ctx.fill()
+                ctx.stroke();
+            }
 
     areColliding(gameObjs[0], gameObjs[1], gameObjs[2]);
     </script>

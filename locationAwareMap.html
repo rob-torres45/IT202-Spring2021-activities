@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Location Awareness Map</title>
+    <style>
+      #map {
+        height: 50%;
+      }
+
+      .webpageTitle{
+        font-family: 'Lato', sans-serif;
+        font-size: 54px;
+        font-weight: bold;
+        color: #594F4F;
+        text-align: center;
+      }
+      html,body{
+        background-color: #9DE0AD;
+        height: 100%;
+        margin: 3%;
+        padding: 0;
+      }
+      .results{
+        font-family: 'Lato', sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+        color: #594F4F;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class = "webpageTitle">
+      Find My Location 
+    </div>
+    <br>
+
+    <div id="map"></div>
+
+    <br>
+    <div class = results>
+      <button id = "find-me">Show my location</button><br/>
+      <p id = "status"></p>
+      <a id = "map-link" target="_blank"></a>
+    </div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjHOxbOgKmNVrU_d0Y4o_HmWywzpxdkBo&callback=initMap"
+      async
+    ></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

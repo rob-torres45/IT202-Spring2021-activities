@@ -9,33 +9,50 @@
       <h1>Hello World</h1>
       <br>
       <form>
-        <textarea id="text" name="text rows="4" cols="50">
-          Type A Sentence Here For Me To Read To You
-        </textarea>
-        <label for="text">TextBox</label>
-        <br><br>
-      </form>
-      <br><br>
-      <form id = "language">
-        <select name = "language" id = "language">
-          <option></option>
+        <input type = "text" class = "text"> 
+        <select>
+
         </select>
+        <div class = "controls">
+          <button id = "play" type = "submit">Play</button>
+        </div>
+
       </form>
-      <button id = "submit">Submit</button>
 
-    </div>
+      
     <script>
-      let voices = speechSynthesis.getVoices();
-      setTimeout(() => {
-        voices = speechSynthesis.getVoices();
-        voices.forEach( voice => {
-            console.log(voice);
-            let opt = document.createElement("option");
-            opt.innerText = voice.lang;
-            document.querySelector("#language").append(opt);
-        })
-      }, 1000);
+      let inputText = document.querySelector("text");
+      let voiceOption = document.querySelector("select");
+      let inputForm = document.querySelector("form");
 
+      window.speechSynthesis.onvoiceschanged = function(){
+        let voices = window.speechSynthesis.getVoices();
+
+        for(let i = 0; i < voices.length; i++){
+          let option = document.createElement("option");
+          option.textContent = voices[i].name + "(" + voices[i].lang + ")";
+          
+          if(voices[i].default){
+            option.textContent += ' -- Default';
+          }
+
+          option.setAttribute('data-lang', voices[i].lang);
+          option.setAttribute('data-name', voices[i].name);
+          voiceOption.appendChild(option);
+        }
+
+        inputForm.onsubmit = function(event){
+          let utterThis = new SpeechSynthesisUtterance(inputText.value);
+          let selectedOption = voiceSelect.selectedOption[0].getAttribute('data-name');
+          for(let j = 0; j < voices.length; j++){
+            if(voices[j].name == selectedOption){
+              console.log(voices[j]);
+              utterThis.voice = voices[j];
+            }
+          }
+          window.speechSynthesis.speak(utterThis);
+        }
+      };
     </script>
   </body>
 </html>

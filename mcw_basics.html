@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Material Components For The Web Basics</title>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        :root{
+            --mdc-theme-primary: #FFC1B1;
+        }
+        body{
+            background-color: #C4F0E8;
+        }
+    </style>
+  </head>
+  <body>
+
+    <label class="mdc-text-field mdc-text-field--filled mdc-text-field--no-label">
+        <span class="mdc-text-field__ripple"></span>
+        <input class="mdc-text-field__input" type="text" placeholder="Hello!" aria-label="Label">
+        <span class="mdc-line-ripple"></span>
+    </label>
+
+    <br><br>
+    
+    <button class="mdc-button mdc-button--raised">
+        <span class="mdc-button__label">Show SnackBar</span>
+    </button>
+
+    <div class="mdc-snackbar">
+      <div class="mdc-snackbar__surface" role="status" aria-relevant="additions">
+        <div class="mdc-snackbar__label" aria-atomic="false">
+          Can't send photo. Retry in 5 seconds.
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let buttonPress = document.querySelector(".mdc-button");
+      let snackbar = mdc.snackbar.MDCSnackbar.attachTo(document.querySelector(".mdc-snackbar"));
+
+      buttonPress.addEventListener("click", () => {
+        let name = document.querySelector(".mdc-text-field__input").value;
+        snackbar.labelText = "You Entered: " + name;
+        snackbar.open();
+      });
+    </script>
+  </body>
+</html>

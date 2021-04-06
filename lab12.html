@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Lab12</title>
+    <style>
+      p{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <script>
+ 
+      fetch("https://data.cityofchicago.org/resource/x8fc-8rcq.json?name_=Archer Heights")
+            .then( (response) => { return response.json() })
+            .then((data) => {
+              data.forEach( (item) => {
+                let p = document.createElement("p");
+                p.innerText = "Archer Height Library Info\n" + "\nName: " + item["name_"] + "\nAddress: " + item["address"] + "\nCity: " + item["city"] + ", " + item["state"] + " " + item["zip"] + "\nPhone: " + item["phone"];
+                document.body.append(p);
+            })
+        })
+
+      fetch("https://data.cityofchicago.org/resource/cbyb-69xx.json?rackid=2581")
+            .then( (response) => { return response.json() })
+            .then((data) => {
+              data.forEach((item) => {
+                let p = document.createElement("p");
+                p.innerText = "Bike Rack APi\n" + "\nRackID: " + item["rackid"] + "\nAddress: " + item["address"] + "\nWard: " + item["ward"] + "\nLocation: " + item["latitude"] + ", " + item["longitude"];
+                document.body.append(p);
+            })
+        })
+        fetch("https://data.cityofchicago.org/resource/x5xx-pszi.json?location=Pilsen Night Market")
+            .then( (response) => { return response.json() })
+            .then((data) => {
+              data.forEach((item) => {
+                let p = document.createElement("p");
+                p.innerText = "Farmers Market APi\n" + "\nLocation: " + item["location"] + "\nAddress: " + item["intersection"] + "\nDay: " + item["day"] + "\nStart Time: " + item["start_time"] + " - End Time: " + item["end_time"];
+                document.body.append(p);
+            })
+        })
+
+    </script>
+  </body>
+</html>

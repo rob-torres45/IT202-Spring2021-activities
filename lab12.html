@@ -20,7 +20,7 @@
             .then((data) => {
               data.forEach( (item) => {
                 let p = document.createElement("p");
-                p.innerText = "Archer Height Library Info\n" + "\nName: " + item["name_"] + "\nAddress: " + item["address"] + "\nCity: " + item["city"] + ", " + item["state"] + " " + item["zip"] + "\nPhone: " + item["phone"];
+                p.innerText = "Archer Height Library Info" + "\nName: " + item["name_"] + "\nAddress: " + item["address"] + "\nCity: " + item["city"] + ", " + item["state"] + " " + item["zip"] + "\nPhone: " + item["phone"];
                 document.body.append(p);
             })
         })
@@ -30,7 +30,7 @@
             .then((data) => {
               data.forEach((item) => {
                 let p = document.createElement("p");
-                p.innerText = "Bike Rack APi\n" + "\nRackID: " + item["rackid"] + "\nAddress: " + item["address"] + "\nWard: " + item["ward"] + "\nLocation: " + item["latitude"] + ", " + item["longitude"];
+                p.innerText = "Bike Rack APi" + "\nRackID: " + item["rackid"] + "\nAddress: " + item["address"] + "\nWard: " + item["ward"] + "\nLocation: " + item["latitude"] + ", " + item["longitude"];
                 document.body.append(p);
             })
         })
@@ -39,7 +39,7 @@
             .then((data) => {
               data.forEach((item) => {
                 let p = document.createElement("p");
-                p.innerText = "Farmers Market APi\n" + "\nLocation: " + item["location"] + "\nAddress: " + item["intersection"] + "\nDay: " + item["day"] + "\nStart Time: " + item["start_time"] + " - End Time: " + item["end_time"];
+                p.innerText = "Farmers Market APi" + "\nLocation: " + item["location"] + "\nAddress: " + item["intersection"] + "\nDay: " + item["day"] + "\nStart Time: " + item["start_time"] + " - End Time: " + item["end_time"];
                 document.body.append(p);
             })
         })
